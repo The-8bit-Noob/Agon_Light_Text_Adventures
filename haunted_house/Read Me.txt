@@ -1,12 +1,13 @@
- Place haunted4 folder C/W all sub folders and files in the root of your sdcard.
+Haunted House was written for Usborne books in 1983.
+https://usborne.com/gb/books/computer-and-coding-books
 
  Keep all images and maps in the correct folder structure.
 
- # CD into haunted4 folder
- * cd haunted4
+ # CD into haunted house folder
+ * cd haunted_house
 
- # Load haunted4.bas
- > LOAD"haunted4.bas"
+ # Load haunted.bas
+ > LOAD"haunted.bas"
  > RUN
 
  Enjoy....
