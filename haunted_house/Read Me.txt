@@ -1,0 +1,13 @@
+ Place haunted4 folder C/W all sub folders and files in the root of your sdcard.
+
+ Keep all images and maps in the correct folder structure.
+
+ # CD into haunted4 folder
+ * cd haunted4
+
+ # Load haunted4.bas
+ > LOAD"haunted4.bas"
+ > RUN
+
+ Enjoy....
+
