@@ -1,6 +1,6 @@
      10 MODE7:FOR I%=0 TO 1:PRINTTAB(10,3+I%)CHR$141"NELLAN IS THIRSTY":NEXT:PRINT''TAB(5)CHR$134"Written by Dr Furman H Smith"'TAB(2)CHR$134"Published in Recreational Computing"'TAB(11)CHR$134"magazine in 1980"
     20 PRINT''TAB(7)"""ported shortly thereafter"'" to the Commodore 64"" by Steven Darnold"'''CHR$134" Ported to BBC BASIC for the BBC Micro"'TAB(10)CHR$134"by lurkio in 2020"
-    30 PRINT''TAB(7)"Ported to the Agon Light"'TAB(7)"by Steve Lovejoy in 2024" TAB(39,22);:PROCd(30)
+    30 PRINT''TAB(8)"Ported to the Agon Light"'TAB(8)"by Steve Lovejoy in 2024" TAB(39,22);:PROCd(30)
    100 L%=39:a$=STRING$(30," "):DIM S% 255
    105 GOSUB705:GOSUB1010:GOSUB745
    110 INPUT"Are you the only person playing? "a$
