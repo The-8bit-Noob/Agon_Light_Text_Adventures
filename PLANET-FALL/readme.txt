@@ -6,8 +6,8 @@
  Written in 1983 by Tim Garden & Ian Nicholls.
  Ported and enhanced for the Agon Light by Steve Lovejoy in 2024.
 
- # CD into PFALL folder.
- >*cd PFALL
+ # CD into PLANET-FALL folder.
+ >*cd PLANET-FALL
 
  # Load PFALL1.bas.
  >LOAD"PFALL1.bas"
