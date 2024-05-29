@@ -30,8 +30,8 @@
   300 FL=1 : PQ=1 : GOSUB 3100
   310 GQ=1
   320 FOR I1=1 TO T9/P9
-  330   FOR P1=1 TO P9 : S7=(P1-1)*6+1 : PRINTTAB(0,21)CHR$135;CHR$157;CHR$133;SPC36;TAB(3,21);N$(P1);" in ";T$(T1) : GOSUB 2550
-  340     FOR GJ=20 TO 23 : PRINTTAB(0,GJ)CHR$135;CHR$157;CHR$135 : G$="10101" : PROCMUSIC(1) : NEXT : GOSUB 5250
+  330   FOR P1=1 TO P9 : S7=(P1-1)*6+1 : PRINTTAB(0,21);SPC36;TAB(1,21);N$(P1);" in ";T$(T1) : GOSUB 2550
+  340     FOR GJ=20 TO 23 : PRINTTAB(0,GJ) : G$="10101" : PROCMUSIC(1) : NEXT : GOSUB 5250
   350     IF SW=9 PRINTTAB(22,22)CHR$129;"'A' to turn page"
   360     L1=L1+6 : T1=T1+1 : NEXT, : PQ=0
   370   IF GQ=1 GOSUB 4560 : GQ=0
@@ -252,11 +252,11 @@
  2520     F=0
  2530     D%=J : J=S1-1 : NEXT : J=D% : RETURN
  2540 NEXT : S(11,S1)=INT(X) : S(12,S1)=INT(Y) : H=1-(H<=3)*H : RETURN
- 2550 PRINTTAB(0,23)CHR$135;CHR$157;SPC37
+ 2550 PRINTTAB(0,23)CHR$156;CHR$135;SPC37
  2560 IF PQ=1 THEN 2580
- 2570 PRINTTAB(23,23)CHR$129;"X for Options";
+ 2570 PRINTTAB(23,23)CHR$134;"X for Options";
  2580 REM *FX15,0
- 2590 PRINTTAB(2,23)CHR$136;CHR$132;"Next Star ?"; : A$=GET$
+ 2590 PRINTTAB(0,23);CHR$134;"Next Star ?"; : A$=GET$
  2600 IF(SW=9)AND(A$="A") GOSUB 4920 : GOTO 2550
  2610 IF PQ=1 THEN 2630
  2620 IF A$="X" GOSUB 5730 : GOTO 2550
@@ -512,9 +512,9 @@
  5120                 P$(S1)=P$(S1)+"j"+W$
  5130               NEXT
  5140               PRINTP$(S1)
- 5150             NEXT : PRINTTAB(0,17)CHR$135;CHR$157;TAB(25,17)CHR$156;TAB(36,17)CHR$145;"7c{"
- 5160             PRINTTAB(0,18)CHR$135;CHR$157;CHR$146;CHR$255;CHR$255;CHR$132;"buying";CHR$147;CHR$255;CHR$255;CHR$132;"selling  ";CHR$156;TAB(29,18);CHR$134;"Weeks";CHR$145;"7az"
- 5170             PRINTTAB(0,19)CHR$135;CHR$157;TAB(25,19)CHR$156;CHR$145;"   wsssssqz" : GOSUB 4000
+ 5150             NEXT : PRINTTAB(25,17)CHR$156;TAB(36,17)CHR$145;"7c{"
+ 5160             PRINTTAB(0,18)CHR$146;CHR$255;CHR$255;CHR$134;"buying";CHR$147;CHR$255;CHR$255;CHR$134;"selling  ";CHR$156;TAB(29,18);CHR$134;"Weeks";CHR$145;"7az"
+ 5170             PRINTTAB(0,19)CHR$156;TAB(25,19)CHR$156;CHR$145;"   wsssssqz" : GOSUB 4000
  5180             GOSUB 5250
  5190             IF SW=9 PRINTTAB(22,22)CHR$129;"'A' to turn page"
  5200             IF(S9>8)AND(S1=9) WZ=QM : GOTO 5220
@@ -522,10 +522,10 @@
  5220             PRINTTAB(2,22)CHR$130;"Press a key for the other prices"
  5230             PROCi
  5240             SW=9 : SX=S9 : GOTO 4960
- 5250             PRINTTAB(0,20)CHR$135;CHR$157;CHR$132;"CARGO"
+ 5250             PRINTTAB(0,20)CHR$135;"CARGO"
  5260             FOR L0=1 TO 6 : IF T(L0,T1)<.000001 THEN ZZ%=1 ELSE ZZ%=0
  5270               PRINTTAB(L0*5+4+ZZ%,20)STR$(T(L0,T1)) : NEXT
- 5280             PRINTTAB(0,21)CHR$135;CHR$157;CHR$130;"CASH `";T(11,T1);TAB(0,22)CHR$135;CHR$157;TAB(0,23)CHR$135;CHR$157;TAB(0,24)CHR$135;CHR$157;
+ 5280             PRINTTAB(0,21)CHR$130;"CASH `";T(11,T1);
  5290             WZ=1 : RETURN
  5300             REM
  5310             CLS : PRINTCHR$146;CHR$157;CHR$135:PRINTTAB(0,2)CHR$146;CHR$157;CHR$135
@@ -620,9 +620,9 @@
  6200                       S9=VAL(A$) : IF(S9<1)OR(S9>15) PRINTTAB(3,12)"Between 1 and 15 systems please" : PROCdelay(12) : PRINTTAB(3,12)SPC36 : GOTO 6190
  6210                       INPUTTAB(3,15)"Enter length of game in years",A$
  6220                       Y9=VAL(A$) : IF Y9<1 OR Y9>99 PRINTTAB(3,15)SPC36 : GOTO 6210
- 6230                       PRINTTAB(1,18)CHR$136"SOUND LEVEL :_ 0(silent) to 5(loud)? "CHR$8; : SL%=GET : PRINTCHR$SL%; : SL%=SL%-48 : IF SL%<0 OR SL%>5 THEN 6230
+ 6230                       INPUTTAB(3,18)"SOUND LEVEL 0=Silent 5=Loud",SL% : PRINTCHR$SL%; : IF SL%<0 OR SL%>5 THEN 6230 : SL%=SL%-48
  6240                       PRINTTAB(3,2)CHR$131TAB(3,20)CHR$131TAB(2,18)CHR$131"It takes a few moments"TAB(2,19)CHR$131"to build the Universe ......"
- 6250                       Y9=Y9+Y1
+ 6250                       PROCdelay(18) : Y9=Y9+Y1
  6260                       S(7,1)=15 : H=1 : S1=2 : GOSUB 2410
  6270                       S1=3 : GOSUB 2410 : S1=4 : GOSUB 6500
  6280                       FOR S1=5 TO S9 : ON S1-3*INT((S1-1)/3) GOSUB 2410,6500,6510
@@ -643,7 +643,7 @@
  6430                       FOR I=1 TO T9/P9 : PRINT : FOR P1=1 TO P9
  6440                           T(1,T1)=0 : T(2,T1)=0 : T(6,T1)=0 : T(3,T1)=15 : T(4,T1)=10 : T(5,T1)=10
  6450                           T(7,T1)=25 : T(8,T1)=1 : T(9,T1)=D1 : T(10,T1)=Y1 : T(11,T1)=5000 : T(12,T1)=0
- 6460                           PRINTN$(P1);TAB(12)"No.";I;" "; : INPUT A$
+ 6460                           PRINTCHR$131;CHR$157;CHR$132;N$(P1);TAB(12)"No.";I;" "; : INPUT A$
  6470                           IF LEN(A$)>10 THEN PRINTCHR$11;CHR$129"MAXIMUM OF 10 LETTERS PLEASE       "; : PROCdelay(12) : PRINTCHR$13;SPC35;CHR$13; : GOTO 6460 ELSE PRINT
  6480                           T$(T1)=A$ : T1=T1+1 : NEXT, : VDU 26
  6490                         FOR B1=1 TO P9 : B(1,B1)=0 : B(2,B1)=D1 : B(3,B1)=Y1 : NEXT : GOTO 240
@@ -726,8 +726,7 @@
  7260                         ENDPROC
  7270                         :
  7280                         DEF PROCi
- 7290                         REM *FX15,0
- 7300                         INPUT A$ : REM =GET$
+ 7300                         A$=GET$
  7310                         ENDPROC
  7320                         :
  7330                         DEF PROCdelay(I%)
