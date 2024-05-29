@@ -1,4 +1,4 @@
-	 10 REM "********************************"
+   10 REM "********************************"
    20 REM "*          PLANET-FALL         *"
    30 REM "*      written in 1983 by      *"
    40 REM "*   Tim Garden & Ian Nicholls  *"
@@ -36,7 +36,8 @@
   360 PRINTCHR$132;CHR$157;CHR$135;CHR$136;"          "; : : INPUT "PRESS ANY KEY",ip$
   370 :
   380 CLS : PROCback(135,132)
-  390 FOR E%=0 TO 1 : PRINTTAB(13,11+E%)CHR$132;CHR$157;CHR$135;CHR$141;"LOADING" : NEXT
+  390 FOR E%=0 TO 1 : PRINTTAB(12,7+E%)CHR$136;CHR$132;CHR$157;CHR$135;CHR$141;"LOADING" : NEXT
+  395 FOR E%=0 TO 1 : PRINTTAB(11,10+E%)CHR$132;CHR$157;CHR$135;CHR$141;"PLANET-FALL" : NEXT
   400 RUN"PFALL2.bas"
   410 END
   420 :
