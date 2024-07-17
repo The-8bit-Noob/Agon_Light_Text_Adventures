@@ -229,7 +229,7 @@
  2270 DATA"","To play, use the keys mentioned later","to position your ship on top of the","planets ( asterisks ). As you clear","each screen, the game will become","increasingly harder, with more planets."
  2280 DATA"Pay particular attention to your fuel."
  2290 DATA""
- 2300 DATA"Your space-craft is equipped with a mine","detector situated in the centre of the","control panel. When a mine is detected","in front of you, a white circle will","appear in front of the imitation space","ship on the panel."," "
+ 2300 DATA"Your space-craft is equipped with a mine","detector situated in the centre of the","control panel. When a mine is detected","in front of you, a RED circle will","appear in front of the imitation space","ship on the panel."," "
  2310 END
  2320 :
  2330 DEF PROCTELETEXT : X=(39-LEND$)/2
